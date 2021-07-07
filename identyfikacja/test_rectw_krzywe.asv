@@ -1,0 +1,47 @@
+close all
+clear all
+N = 2000;
+T = 1:N;
+blocks = makesig('Blocks', N+1500)';
+blocks = blocks(251 : 250+N);
+
+a1 =  0.3 *  blocks / max(blocks(:));
+a1 = a1 -  min(a1(:)) + 0.1;
+%a1(N-100:N) = 0;
+
+a2 = 0.5* blocks / max(blocks(:));
+a2 = a2 - min(a2(:)) - 0.1;
+%a2(N-100:N) = 0;
+
+b1 = a2;
+b2 = a1;
+
+r = 2;
+
+u = randn(N, 1);
+
+y = zeros(N, 1);
+y_est = zeros(size(y));
+
+
+for t=r:N
+    % y(t)= b1(t)*u(t-1)+b2(t)*u(t-2);   
+    y(t) = b2(t) * u(t-1) + b1(t) * u(t) + 0.04* randn(1);
+end
+
+e = [];
+e2 = [];
+
+L = [];
+
+for linf = 2:20
+    L =
+    [th1, fi1, ye1] = ident_rectw_FIR(u, y, linf);
+    e = [e, sum(ye1(:).^2)];
+    [th1, fi1, ye1] = ident_rectw_FIR_lewostr(u, y, linf);
+    e2 = [e2, sum(ye1(:).^2)];
+end
+
+plot( e);
+hold on
+plot( e2, 'r');

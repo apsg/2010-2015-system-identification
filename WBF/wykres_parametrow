@@ -1,0 +1,8 @@
+[c1, c2] = generuj(5000, 'C');
+
+f = figure;
+set(f, 'Color', 'white')
+p = plot(1:5000, c1,'k');
+set(p, 'LineWidth', 1);
+set(gca, 'FontSize', 18)
+set(gca, 'XLim', [0, 5000])

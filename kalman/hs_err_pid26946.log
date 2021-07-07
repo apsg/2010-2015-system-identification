@@ -1,0 +1,687 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00c38a08, pid=26946, tid=123984752
+#
+# JRE version: 6.0_22-b04
+# Java VM: Java HotSpot(TM) Client VM (17.1-b03 mixed mode, sharing linux-x86 )
+# Problematic frame:
+# C  [libut.so+0xca08]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb54f7800):  JavaThread "AWT-EventQueue-0" [_thread_in_Java, id=27013, stack(0x075ed000,0x0763e000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=128 (), si_addr=0x00000000
+
+Registers:
+EAX=0x00c38990, EBX=0x00ca5534, ECX=0x00000074, EDX=0x00000000
+ESP=0xbf9781ac, EBP=0xbf9781d8, ESI=0xbf978170, EDI=0x00cb0444
+EIP=0x00c38a08, CR2=0x00000000, EFLAGS=0x00010206
+
+Top of Stack: (sp=0xbf9781ac)
+0xbf9781ac:   00c5dd38 00cb0444 0074bff4 00010004
+0xbf9781bc:   bf978a28 bf978a18 00742cf0 00000000
+0xbf9781cc:   00ca5534 bf978200 00010004 bf978a18
+0xbf9781dc:   00c5dbba 00cb0444 bf978200 00010004
+0xbf9781ec:   bf978a28 bf978290 00000001 00000001
+0xbf9781fc:   bf978a28 4c54414d 653a4241 735f7272
+0xbf97820c:   616e6769 6e695f6c 72726574 00747075
+0xbf97821c:   002a6945 00182660 00000000 00357796 
+
+Instructions: (pc=0x00c38a08)
+0x00c389f8:   75 74 43 6f 6e 74 65 78 74 45 78 63 65 70 74 69
+0x00c38a08:   6f 6e 00 5f 5f 63 78 61 5f 74 68 72 6f 77 00 75 
+
+Stack: [0x075ed000,0x0763e000],  sp=0xbf9781ac,  free space=ffee0e2cbf976ad0k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libut.so+0xca08]
+C  [libut.so+0x31bba]  ut_error+0x4a
+C  [libmwm_interpreter.so+0x6f45d]
+C  [libmwm_interpreter.so+0x6f7cc]
+C  [libmwm_interpreter.so+0xac556]
+C  [libmwm_interpreter.so+0x80eaa]
+C  [libmwm_interpreter.so+0x80ed4]
+C  [libmwm_dispatcher.so+0x5234a]  _ZN8Mfh_file11dispatch_fhEiPP11mxArray_tagiS2_+0x10e
+C  [libmwm_interpreter.so+0x9fa17]
+C  [libmwm_interpreter.so+0x6d441]
+C  [libmwm_interpreter.so+0x6e2ff]
+C  [libmwm_interpreter.so+0x6f2cc]
+C  [libmwm_interpreter.so+0x6f7cc]
+C  [libmwm_interpreter.so+0xac556]
+C  [libmwm_interpreter.so+0x80eaa]
+C  [libmwm_interpreter.so+0x80ed4]
+C  [libmwm_dispatcher.so+0x5234a]  _ZN8Mfh_file11dispatch_fhEiPP11mxArray_tagiS2_+0x10e
+C  [libmwm_interpreter.so+0x9fa17]
+C  [libmwm_interpreter.so+0x56c79]
+C  [libmwm_interpreter.so+0x6de89]
+C  [libmwm_interpreter.so+0x6f2cc]
+C  [libmwm_interpreter.so+0x6f7cc]
+C  [libmwm_interpreter.so+0xac7a7]
+C  [libmwm_interpreter.so+0x80de0]
+C  [libmwm_interpreter.so+0x80ed4]
+C  [libmwm_dispatcher.so+0x5234a]  _ZN8Mfh_file11dispatch_fhEiPP11mxArray_tagiS2_+0x10e
+C  [libmwm_interpreter.so+0x9fa17]
+C  [libmwm_interpreter.so+0x6d441]
+C  [libmwm_interpreter.so+0x6e2ff]
+C  [libmwm_interpreter.so+0x6f2cc]
+C  [libmwm_interpreter.so+0x6f56a]
+C  [libmwm_interpreter.so+0x6a37b]
+C  [libmwm_interpreter.so+0x697be]
+C  [libmwm_interpreter.so+0x68b9a]  inEvalCmdNoEnd+0x6e
+C  [libmwbridge.so+0x24dcf]  mnParser+0x1d7
+C  [libmwmcr.so+0xd060]  _ZN11mcrInstance8mnParserEv+0x60
+C  [MATLAB+0x2920]  __gxx_personality_v0+0x3d4
+C  [MATLAB+0x27e7]  __gxx_personality_v0+0x29b
+C  [libc.so.6+0x16ce7]  __libc_start_main+0xe7
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x098ee000 JavaThread "FigureTreeLockThread" [_thread_blocked, id=27070, stack(0x02cd4000,0x02d25000)]
+  0x08d17000 JavaThread "Timer-File View state monitor" [_thread_blocked, id=27040, stack(0x088de000,0x0892f000)]
+  0xb5552c00 JavaThread "Looper-EditorApplication" [_thread_blocked, id=27032, stack(0x02c06000,0x02c57000)]
+  0xb557dc00 JavaThread "Image Fetcher 2" daemon [_thread_blocked, id=27027, stack(0x02bb5000,0x02c06000)]
+  0xb557e400 JavaThread "Image Fetcher 1" daemon [_thread_blocked, id=27026, stack(0x02b64000,0x02bb5000)]
+  0xb557fc00 JavaThread "Timer-0" [_thread_blocked, id=27025, stack(0x02b13000,0x02b64000)]
+  0xb557a000 JavaThread "Looper-MatlabWorkspaceListener" [_thread_blocked, id=27024, stack(0x08961000,0x089b2000)]
+  0xb554f000 JavaThread "Looper-MatlabDebugServices" [_thread_blocked, id=27016, stack(0x02aac000,0x02afd000)]
+  0xb553d000 JavaThread "Looper-Shared Reply" [_thread_blocked, id=27015, stack(0x06c0c000,0x06c5d000)]
+  0xb54da000 JavaThread "TimerQueue" daemon [_thread_blocked, id=27014, stack(0x02a5b000,0x02aac000)]
+=>0xb54f7800 JavaThread "AWT-EventQueue-0" [_thread_in_Java, id=27013, stack(0x075ed000,0x0763e000)]
+  0xb54f6000 JavaThread "AWT-Shutdown" [_thread_blocked, id=27012, stack(0x08085000,0x080d6000)]
+  0xb54f1000 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=27011, stack(0x07ed5000,0x07f26000)]
+  0xb54d3c00 JavaThread "Looper-MatlabCommandWidget" [_thread_blocked, id=27010, stack(0x02a0a000,0x02a5b000)]
+  0xb54c6400 JavaThread "Thread-1" [_thread_in_native, id=27009, stack(0x02779000,0x027ca000)]
+  0xb54b1400 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=27008, stack(0x0485e000,0x048af000)]
+  0xb5476000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=27007, stack(0x0820c000,0x0825d000)]
+  0xb5600800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=27005, stack(0x02275000,0x022c6000)]
+  0x08d24000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=27004, stack(0x0875d000,0x087de000)]
+  0x08d22800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=27003, stack(0x02224000,0x02275000)]
+  0x08d1b000 JavaThread "Finalizer" daemon [_thread_blocked, id=27002, stack(0x07c73000,0x07cc4000)]
+  0x08d19800 JavaThread "Reference Handler" daemon [_thread_blocked, id=27001, stack(0x07676000,0x076c7000)]
+  0x08cf4c00 JavaThread "main" [_thread_in_native, id=26946, stack(0xbf930000,0xbf980000)]
+
+Other Threads:
+  0x08d18000 VMThread [stack: 0x065d9000,0x0665a000] [id=27000]
+  0xb5603000 WatcherThread [stack: 0x07466000,0x074e7000] [id=27006]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 11200K, used 8584K [0x7ee40000, 0x7fa60000, 0x84390000)
+  eden space 9984K,  85% used [0x7ee40000, 0x7f6a2028, 0x7f800000)
+  from space 1216K,   0% used [0x7f800000, 0x7f800000, 0x7f930000)
+  to   space 1216K,   0% used [0x7f930000, 0x7f930000, 0x7fa60000)
+ tenured generation   total 24712K, used 14826K [0x84390000, 0x85bb2000, 0x8ee40000)
+   the space 24712K,  59% used [0x84390000, 0x8520aa18, 0x8520ac00, 0x85bb2000)
+ compacting perm gen  total 12288K, used 10329K [0x8ee40000, 0x8fa40000, 0x92e40000)
+   the space 12288K,  84% used [0x8ee40000, 0x8f856710, 0x8f856800, 0x8fa40000)
+    ro space 10240K,  61% used [0x92e40000, 0x93467500, 0x93467600, 0x93840000)
+    rw space 12288K,  60% used [0x93840000, 0x93f776f8, 0x93f77800, 0x94440000)
+
+Dynamic libraries:
+00110000-00111000 rwxp 00000000 00:00 0 
+00111000-00182000 r-xp 00000000 08:05 154        /media/Dane/Matlab/bin/glnx86/libmwm_dispatcher.so
+00182000-00194000 rwxp 00070000 08:05 154        /media/Dane/Matlab/bin/glnx86/libmwm_dispatcher.so
+00194000-0019c000 r-xp 00000000 08:07 527115     /usr/lib/libXcursor.so.1.0.2
+0019c000-0019d000 r-xp 00007000 08:07 527115     /usr/lib/libXcursor.so.1.0.2
+0019d000-0019e000 rwxp 00008000 08:07 527115     /usr/lib/libXcursor.so.1.0.2
+0019e000-001a6000 r-xp 00000000 08:07 527143     /usr/lib/libXrender.so.1.3.0
+001a6000-001a7000 r-xp 00007000 08:07 527143     /usr/lib/libXrender.so.1.3.0
+001a7000-001a8000 rwxp 00008000 08:07 527143     /usr/lib/libXrender.so.1.3.0
+001a8000-001a9000 r-xp 00000000 00:00 0 
+001a9000-001be000 r-xp 00000000 08:07 656846     /lib/libpthread-2.12.1.so
+001be000-001bf000 ---p 00015000 08:07 656846     /lib/libpthread-2.12.1.so
+001bf000-001c0000 r-xp 00015000 08:07 656846     /lib/libpthread-2.12.1.so
+001c0000-001c1000 rwxp 00016000 08:07 656846     /lib/libpthread-2.12.1.so
+001c1000-001c3000 rwxp 00000000 00:00 0 
+001c3000-001e7000 r-xp 00000000 08:07 656843     /lib/libm-2.12.1.so
+001e7000-001e8000 r-xp 00023000 08:07 656843     /lib/libm-2.12.1.so
+001e8000-001e9000 rwxp 00024000 08:07 656843     /lib/libm-2.12.1.so
+001e9000-001ea000 r-xp 00000000 08:05 158        /media/Dane/Matlab/bin/glnx86/libicudata.so.24
+001ea000-001eb000 rwxp 00000000 08:05 158        /media/Dane/Matlab/bin/glnx86/libicudata.so.24
+001eb000-001f7000 r-xp 00000000 08:05 161        /media/Dane/Matlab/bin/glnx86/libustdio.so.24
+001f7000-001fa000 rwxp 0000b000 08:05 161        /media/Dane/Matlab/bin/glnx86/libustdio.so.24
+001fa000-001fc000 r-xp 00000000 08:07 656418     /lib/libdl-2.12.1.so
+001fc000-001fd000 r-xp 00001000 08:07 656418     /lib/libdl-2.12.1.so
+001fd000-001fe000 rwxp 00002000 08:07 656418     /lib/libdl-2.12.1.so
+001fe000-001ff000 rwxp 00000000 00:00 0 
+001ff000-00202000 r-xp 00000000 08:05 167        /media/Dane/Matlab/sys/os/glnx86/libtermcap.so
+00202000-00203000 rwxp 00002000 08:05 167        /media/Dane/Matlab/sys/os/glnx86/libtermcap.so
+00203000-00210000 r-xp 00000000 08:05 153        /media/Dane/Matlab/bin/glnx86/libmwmvalue.so
+00210000-00214000 rwxp 0000c000 08:05 153        /media/Dane/Matlab/bin/glnx86/libmwmvalue.so
+00214000-002c4000 r-xp 00000000 08:05 156        /media/Dane/Matlab/bin/glnx86/libstdc++.so.5
+002c4000-002c9000 rwxp 000af000 08:05 156        /media/Dane/Matlab/bin/glnx86/libstdc++.so.5
+002c9000-002ce000 rwxp 00000000 00:00 0 
+002ce000-002e8000 r-xp 00000000 08:05 157        /media/Dane/Matlab/sys/os/glnx86/libgcc_s.so.1
+002e8000-002e9000 r-xp 00019000 08:05 157        /media/Dane/Matlab/sys/os/glnx86/libgcc_s.so.1
+002e9000-002ea000 rwxp 0001a000 08:05 157        /media/Dane/Matlab/sys/os/glnx86/libgcc_s.so.1
+002ea000-00441000 r-xp 00000000 08:07 656845     /lib/libc-2.12.1.so
+00441000-00442000 ---p 00157000 08:07 656845     /lib/libc-2.12.1.so
+00442000-00444000 r-xp 00157000 08:07 656845     /lib/libc-2.12.1.so
+00444000-00445000 rwxp 00159000 08:07 656845     /lib/libc-2.12.1.so
+00445000-00448000 rwxp 00000000 00:00 0 
+00448000-0045a000 r-xp 00000000 08:05 163        /media/Dane/Matlab/bin/glnx86/libmwmpath.so
+0045a000-0045f000 rwxp 00011000 08:05 163        /media/Dane/Matlab/bin/glnx86/libmwmpath.so
+0045f000-00461000 rwxp 00000000 00:00 0 
+00461000-0046a000 r-xp 00000000 08:05 164        /media/Dane/Matlab/bin/glnx86/libmex.so
+0046a000-0046d000 rwxp 00008000 08:05 164        /media/Dane/Matlab/bin/glnx86/libmex.so
+0046d000-00474000 r-xp 00000000 08:05 168        /media/Dane/Matlab/bin/glnx86/libmat.so
+00474000-00476000 rwxp 00006000 08:05 168        /media/Dane/Matlab/bin/glnx86/libmat.so
+00476000-00477000 rwxp 00000000 00:00 0 
+00477000-0047b000 r-xp 00000000 08:05 174        /media/Dane/Matlab/bin/glnx86/libmwuinone.so
+0047b000-0047d000 rwxp 00003000 08:05 174        /media/Dane/Matlab/bin/glnx86/libmwuinone.so
+0047d000-0047f000 rwxp 00000000 00:00 0 
+0047f000-00488000 r-xp 00000000 08:05 182        /media/Dane/Matlab/bin/glnx86/libmwir_xfmr.so
+00488000-0048a000 rwxp 00008000 08:05 182        /media/Dane/Matlab/bin/glnx86/libmwir_xfmr.so
+0048a000-0048e000 rwxp 00000000 00:00 0 
+0048e000-0048f000 rwxp 00000000 00:00 0 
+0048f000-004a0000 r-xp 00000000 08:05 181        /media/Dane/Matlab/bin/glnx86/libmwm_pcodegen.so
+004a0000-004a4000 rwxp 00010000 08:05 181        /media/Dane/Matlab/bin/glnx86/libmwm_pcodegen.so
+004a4000-00522000 r-xp 00000000 08:05 151        /media/Dane/Matlab/bin/glnx86/libmwbridge.so
+00522000-0052e000 rwxp 0007d000 08:05 151        /media/Dane/Matlab/bin/glnx86/libmwbridge.so
+0052e000-00536000 rwxp 00000000 00:00 0 
+00536000-005bc000 r-xp 00000000 08:05 160        /media/Dane/Matlab/bin/glnx86/libicuuc.so.24
+005bc000-005cd000 rwxp 00085000 08:05 160        /media/Dane/Matlab/bin/glnx86/libicuuc.so.24
+005cd000-005e8000 r-xp 00000000 08:05 177        /media/Dane/Matlab/bin/glnx86/libmwdatasvcs.so
+005e8000-005ec000 rwxp 0001a000 08:05 177        /media/Dane/Matlab/bin/glnx86/libmwdatasvcs.so
+005ec000-005ef000 rwxp 00000000 00:00 0 
+005ef000-0062b000 r-xp 00000000 08:05 148        /media/Dane/Matlab/bin/glnx86/libmx.so
+0062b000-00635000 rwxp 0003b000 08:05 148        /media/Dane/Matlab/bin/glnx86/libmx.so
+00635000-006d8000 r-xp 00000000 08:05 159        /media/Dane/Matlab/bin/glnx86/libicui18n.so.24
+006d8000-006f1000 rwxp 000a2000 08:05 159        /media/Dane/Matlab/bin/glnx86/libicui18n.so.24
+006f1000-0070f000 r-xp 00000000 08:05 172        /media/Dane/Matlab/bin/glnx86/libuij.so
+0070f000-00715000 rwxp 0001d000 08:05 172        /media/Dane/Matlab/bin/glnx86/libuij.so
+00715000-00716000 rwxp 00000000 00:00 0 
+00716000-00728000 r-xp 00000000 08:05 180        /media/Dane/Matlab/bin/glnx86/libmwm_pcodeio.so
+00728000-0072c000 rwxp 00011000 08:05 180        /media/Dane/Matlab/bin/glnx86/libmwm_pcodeio.so
+0072c000-0072d000 rwxp 00000000 00:00 0 
+0072d000-0072f000 r-xs 00019000 08:05 228        /media/Dane/Matlab/java/jar/util.jar
+0072f000-0074b000 r-xp 00000000 08:07 656403     /lib/ld-2.12.1.so
+0074b000-0074c000 r-xp 0001b000 08:07 656403     /lib/ld-2.12.1.so
+0074c000-0074d000 rwxp 0001c000 08:07 656403     /lib/ld-2.12.1.so
+0074d000-00966000 r-xp 00000000 08:05 155        /media/Dane/Matlab/bin/glnx86/libmwm_interpreter.so
+00966000-009cd000 rwxp 00218000 08:05 155        /media/Dane/Matlab/bin/glnx86/libmwm_interpreter.so
+009cd000-009ed000 rwxp 00000000 00:00 0 
+009ed000-00a39000 r-xp 00000000 08:05 173        /media/Dane/Matlab/bin/glnx86/libmwudd_mi.so
+00a39000-00a49000 rwxp 0004b000 08:05 173        /media/Dane/Matlab/bin/glnx86/libmwudd_mi.so
+00a49000-00a4d000 r-xp 00000000 08:05 190        /media/Dane/Matlab/bin/glnx86/libmwcolamd.so
+00a4d000-00a4e000 rwxp 00003000 08:05 190        /media/Dane/Matlab/bin/glnx86/libmwcolamd.so
+00a4e000-00a50000 r-xp 00000000 08:07 527108     /usr/lib/libXau.so.6.0.0
+00a50000-00a51000 r-xp 00001000 08:07 527108     /usr/lib/libXau.so.6.0.0
+00a51000-00a52000 rwxp 00002000 08:07 527108     /usr/lib/libXau.so.6.0.0
+00a52000-00a53000 r-xs 00000000 08:05 260        /media/Dane/Matlab/java/jar/toolbox/optim.jar
+00a53000-00a54000 r-xp 00000000 00:00 0          [vdso]
+00a54000-00adb000 r-xp 00000000 08:05 166        /media/Dane/Matlab/bin/glnx86/libmwudd.so
+00adb000-00aff000 rwxp 00086000 08:05 166        /media/Dane/Matlab/bin/glnx86/libmwudd.so
+00aff000-00b00000 rwxp 00000000 00:00 0 
+00b00000-00b91000 r-xp 00000000 08:05 169        /media/Dane/Matlab/bin/glnx86/libmwmcos.so
+00b91000-00bb0000 rwxp 00090000 08:05 169        /media/Dane/Matlab/bin/glnx86/libmwmcos.so
+00bb0000-00bb1000 rwxp 00000000 00:00 0 
+00bb1000-00bda000 r-xp 00000000 08:05 183        /media/Dane/Matlab/bin/glnx86/libmwhardcopy.so
+00bda000-00bdf000 rwxp 00028000 08:05 183        /media/Dane/Matlab/bin/glnx86/libmwhardcopy.so
+00bdf000-00be0000 rwxp 00000000 00:00 0 
+00be0000-00bee000 r-xp 00000000 08:07 527121     /usr/lib/libXext.so.6.4.0
+00bee000-00bef000 r-xp 0000d000 08:07 527121     /usr/lib/libXext.so.6.4.0
+00bef000-00bf0000 rwxp 0000e000 08:07 527121     /usr/lib/libXext.so.6.4.0
+00bf0000-00bf3000 r-xp 00000000 08:07 655705     /lib/libuuid.so.1.3.0
+00bf3000-00bf4000 r-xp 00002000 08:07 655705     /lib/libuuid.so.1.3.0
+00bf4000-00bf5000 rwxp 00003000 08:07 655705     /lib/libuuid.so.1.3.0
+00bf5000-00bf6000 r-xs 00001000 08:05 268        /media/Dane/Matlab/java/jar/xml.jar
+00bf6000-00bf7000 rwxp 00000000 00:00 0 
+00bf7000-00bfe000 r-xp 00000000 08:07 527100     /usr/lib/libSM.so.6.0.1
+00bfe000-00bff000 r-xp 00006000 08:07 527100     /usr/lib/libSM.so.6.0.1
+00bff000-00c00000 rwxp 00007000 08:07 527100     /usr/lib/libSM.so.6.0.1
+00c00000-00c04000 r-xp 00000000 08:07 527119     /usr/lib/libXdmcp.so.6.0.0
+00c04000-00c05000 r-xp 00003000 08:07 527119     /usr/lib/libXdmcp.so.6.0.0
+00c05000-00c06000 rwxp 00004000 08:07 527119     /usr/lib/libXdmcp.so.6.0.0
+00c06000-00c0c000 r-xp 00000000 08:07 656844     /lib/libnss_compat-2.12.1.so
+00c0c000-00c0d000 r-xp 00006000 08:07 656844     /lib/libnss_compat-2.12.1.so
+00c0d000-00c0e000 rwxp 00007000 08:07 656844     /lib/libnss_compat-2.12.1.so
+00c0e000-00c12000 r-xp 00000000 08:07 527123     /usr/lib/libXfixes.so.3.1.0
+00c12000-00c13000 r-xp 00003000 08:07 527123     /usr/lib/libXfixes.so.3.1.0
+00c13000-00c14000 rwxp 00004000 08:07 527123     /usr/lib/libXfixes.so.3.1.0
+00c14000-00c16000 r-xs 0000c000 08:05 236        /media/Dane/Matlab/java/jar/mlservices.jar
+00c16000-00c17000 r-xs 00006000 08:05 272        /media/Dane/Matlab/java/jarext/audio.jar
+00c17000-00c18000 rwxp 00000000 00:00 0 
+00c18000-00c1f000 r-xp 00000000 08:07 656420     /lib/librt-2.12.1.so
+00c1f000-00c20000 r-xp 00006000 08:07 656420     /lib/librt-2.12.1.so
+00c20000-00c21000 rwxp 00007000 08:07 656420     /lib/librt-2.12.1.so
+00c21000-00c22000 r-xs 00009000 08:05 285        /media/Dane/Matlab/java/jarext/ice/ib5swing.jar
+00c22000-00c29000 r-xp 00000000 08:07 527137     /usr/lib/libXp.so.6.2.0
+00c29000-00c2a000 r-xp 00006000 08:07 527137     /usr/lib/libXp.so.6.2.0
+00c2a000-00c2b000 rwxp 00007000 08:07 527137     /usr/lib/libXp.so.6.2.0
+00c2b000-00c2c000 r-xs 00000000 08:05 287        /media/Dane/Matlab/java/jarext/ice/ib5xalan.jar
+00c2c000-00c94000 r-xp 00000000 08:05 147        /media/Dane/Matlab/bin/glnx86/libut.so
+00c94000-00ca7000 rwxp 00067000 08:05 147        /media/Dane/Matlab/bin/glnx86/libut.so
+00ca7000-00cc3000 rwxp 00000000 00:00 0 
+00cc3000-00cf0000 r-xp 00000000 08:05 186        /media/Dane/Matlab/bin/glnx86/libmwlapack.so
+00cf0000-00cf4000 rwxp 0002c000 08:05 186        /media/Dane/Matlab/bin/glnx86/libmwlapack.so
+00cf4000-00cfd000 r-xp 00000000 08:07 656822     /lib/libnss_nis-2.12.1.so
+00cfd000-00cfe000 r-xp 00008000 08:07 656822     /lib/libnss_nis-2.12.1.so
+00cfe000-00cff000 rwxp 00009000 08:07 656822     /lib/libnss_nis-2.12.1.so
+00cff000-00d05000 r-xp 00000000 08:07 544439     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/native_threads/libhpi.so
+00d05000-00d06000 rwxp 00006000 08:07 544439     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/native_threads/libhpi.so
+00d06000-00d0a000 r-xs 00018000 08:05 230        /media/Dane/Matlab/java/jar/beans.jar
+00d0a000-00d1d000 r-xp 00000000 08:05 152        /media/Dane/Matlab/bin/glnx86/libmwmcr.so
+00d1d000-00d20000 rwxp 00012000 08:05 152        /media/Dane/Matlab/bin/glnx86/libmwmcr.so
+00d20000-00d21000 rwxp 00000000 00:00 0 
+00d21000-00d6e000 r-xp 00000000 08:05 170        /media/Dane/Matlab/bin/glnx86/libmwgui.so
+00d6e000-00da9000 rwxp 0004c000 08:05 170        /media/Dane/Matlab/bin/glnx86/libmwgui.so
+00da9000-00daa000 rwxp 00000000 00:00 0 
+00daa000-00db4000 r-xp 00000000 08:07 656416     /lib/libnss_files-2.12.1.so
+00db4000-00db5000 r-xp 00009000 08:07 656416     /lib/libnss_files-2.12.1.so
+00db5000-00db6000 rwxp 0000a000 08:07 656416     /lib/libnss_files-2.12.1.so
+00db6000-00dbe000 rwxs 00000000 08:07 657402     /tmp/hsperfdata_gacek/26946
+00dbe000-00dca000 r-xp 00000000 08:05 162        /media/Dane/Matlab/bin/glnx86/libz.so
+00dca000-00dcd000 rwxp 0000b000 08:05 162        /media/Dane/Matlab/bin/glnx86/libz.so
+00dcd000-00dcf000 r-xs 0000c000 08:05 243        /media/Dane/Matlab/java/jar/services.jar
+00dcf000-00e47000 r-xp 00000000 08:05 149        /media/Dane/Matlab/bin/glnx86/libmwservices.so
+00e47000-00e56000 rwxp 00077000 08:05 149        /media/Dane/Matlab/bin/glnx86/libmwservices.so
+00e56000-00e61000 rwxp 00000000 00:00 0 
+00e61000-00e7a000 r-xp 00000000 08:05 179        /media/Dane/Matlab/bin/glnx86/libmwmlib.so
+00e7a000-00ebb000 rwxp 00018000 08:05 179        /media/Dane/Matlab/bin/glnx86/libmwmlib.so
+00ebb000-00ec3000 rwxp 00000000 00:00 0 
+00ec3000-00f12000 r-xp 00000000 08:07 527147     /usr/lib/libXt.so.6.0.0
+00f12000-00f13000 r-xp 0004e000 08:07 527147     /usr/lib/libXt.so.6.0.0
+00f13000-00f16000 rwxp 0004f000 08:07 527147     /usr/lib/libXt.so.6.0.0
+00f16000-00f1d000 rwxp 00000000 00:00 0 
+00f1d000-00f1e000 r-xs 00000000 08:07 404590     /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-3
+00f1e000-00f1f000 rwxp 00000000 00:00 0 
+00f1f000-00f69000 r-xp 00000000 08:05 189        /media/Dane/Matlab/bin/glnx86/libmwumfpack.so
+00f69000-00f6b000 rwxp 00049000 08:05 189        /media/Dane/Matlab/bin/glnx86/libmwumfpack.so
+00f6b000-00f6d000 r-xs 00004000 08:05 244        /media/Dane/Matlab/java/jar/timer.jar
+00f6d000-00f6f000 r-xs 00005000 08:05 250        /media/Dane/Matlab/java/jar/toolbox/database.jar
+00f6f000-00f9a000 r-xp 00000000 08:05 150        /media/Dane/Matlab/bin/glnx86/libmwjmi.so
+00f9a000-00fa6000 rwxp 0002a000 08:05 150        /media/Dane/Matlab/bin/glnx86/libmwjmi.so
+00fa6000-00fbb000 r-xp 00000000 08:07 527079     /usr/lib/libICE.so.6.3.0
+00fbb000-00fbc000 r-xp 00014000 08:07 527079     /usr/lib/libICE.so.6.3.0
+00fbc000-00fbd000 rwxp 00015000 08:07 527079     /usr/lib/libICE.so.6.3.0
+00fbd000-00fbf000 rwxp 00000000 00:00 0 
+00fbf000-00fca000 r-xp 00000000 08:07 544448     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libverify.so
+00fca000-00fcb000 rwxp 0000b000 08:07 544448     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libverify.so
+00fcb000-00fd1000 r-xs 00085000 08:05 232        /media/Dane/Matlab/java/jar/ice.jar
+00fd1000-00fd3000 r-xs 00022000 08:05 251        /media/Dane/Matlab/java/jar/toolbox/dspblks.jar
+00fd3000-00fd4000 rwxp 00000000 00:00 0 
+00fd4000-010c5000 r-xp 00000000 08:05 165        /media/Dane/Matlab/bin/glnx86/libmwm_parser.so
+010c5000-01242000 rwxp 000f0000 08:05 165        /media/Dane/Matlab/bin/glnx86/libmwm_parser.so
+01242000-01447000 r-xp 00000000 08:05 178        /media/Dane/Matlab/bin/glnx86/libxerces-c.so.21
+01447000-014aa000 rwxp 00204000 08:05 178        /media/Dane/Matlab/bin/glnx86/libxerces-c.so.21
+014aa000-014ab000 rwxp 00000000 00:00 0 
+014ab000-01763000 r-xp 00000000 08:05 192        /media/Dane/Matlab/bin/glnx86/atlas_PIII.so
+01763000-01764000 rwxp 002b7000 08:05 192        /media/Dane/Matlab/bin/glnx86/atlas_PIII.so
+01764000-017a8000 rwxp 00000000 00:00 0 
+017a8000-01f9e000 r-xs 00000000 08:05 194        /media/Dane/Matlab/bin/glnx86/icudt24l.dat
+01f9e000-02020000 rwxp 00000000 00:00 0 
+02020000-02033000 r-xp 00000000 08:07 656831     /lib/libnsl-2.12.1.so
+02033000-02034000 r-xp 00012000 08:07 656831     /lib/libnsl-2.12.1.so
+02034000-02035000 rwxp 00013000 08:07 656831     /lib/libnsl-2.12.1.so
+02035000-0203e000 rwxp 00000000 00:00 0 
+0203e000-02061000 rwxp 00000000 00:00 0 
+02061000-0206e000 rwxp 00000000 00:00 0 
+0206e000-020b7000 rwxp 00000000 00:00 0 
+020b7000-020bd000 rwxp 00000000 00:00 0 
+020bd000-020d7000 rwxp 00000000 00:00 0 
+020d7000-020ea000 rwxp 00000000 00:00 0 
+020ea000-02104000 rwxp 00000000 00:00 0 
+02104000-02224000 r-xp 0082d000 08:07 531560     /usr/lib/locale/locale-archive
+02224000-02227000 ---p 00000000 00:00 0 
+02227000-02275000 rwxp 00000000 00:00 0 
+02275000-02278000 ---p 00000000 00:00 0 
+02278000-022c6000 rwxp 00000000 00:00 0 
+022c6000-022e2000 r-xs 00137000 08:05 235        /media/Dane/Matlab/java/jar/mde.jar
+022e2000-022f6000 r-xs 000d5000 08:05 238        /media/Dane/Matlab/java/jar/mwswing.jar
+022f6000-022f7000 r-xs 00000000 08:07 405154     /var/cache/fontconfig/98d684ad3abba16030bd60992dc9c5d7-le32d4.cache-3
+022f7000-02377000 r-xp 00000000 08:05 187        /media/Dane/Matlab/bin/glnx86/libfftw3.so.3
+02377000-0237b000 rwxp 0007f000 08:05 187        /media/Dane/Matlab/bin/glnx86/libfftw3.so.3
+0237b000-02513000 r-xs 03013000 08:07 668143     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/rt.jar
+02513000-02522000 r-xs 000c1000 08:05 241        /media/Dane/Matlab/java/jar/org/netbeans.jar
+02522000-02539000 r-xs 000e3000 08:05 242        /media/Dane/Matlab/java/jar/page.jar
+02539000-02547000 r-xp 00000000 08:05 299        /media/Dane/Matlab/bin/glnx86/libmwjmi_mi.so
+02547000-0254a000 rwxp 0000d000 08:05 299        /media/Dane/Matlab/bin/glnx86/libmwjmi_mi.so
+0254a000-0254b000 rwxp 00000000 00:00 0 
+0254b000-02552000 r-xs 00031000 08:05 252        /media/Dane/Matlab/java/jar/toolbox/ecoder.jar
+02552000-02555000 r-xs 00017000 08:05 253        /media/Dane/Matlab/java/jar/toolbox/eml.jar
+02555000-0255a000 r-xs 00028000 08:05 254        /media/Dane/Matlab/java/jar/toolbox/images.jar
+0255a000-0256a000 r-xs 00104000 08:05 255        /media/Dane/Matlab/java/jar/toolbox/instrument.jar
+0256a000-0256d000 r-xs 00015000 08:05 258        /media/Dane/Matlab/java/jar/toolbox/mdldisc.jar
+0256d000-0256f000 r-xs 00013000 08:05 259        /media/Dane/Matlab/java/jar/toolbox/nnet.jar
+0256f000-02583000 r-xs 000b6000 08:05 262        /media/Dane/Matlab/java/jar/toolbox/simulink.jar
+02583000-02587000 r-xs 0001e000 08:05 264        /media/Dane/Matlab/java/jar/toolbox/stateflow.jar
+02587000-0258b000 r-xs 00026000 08:05 266        /media/Dane/Matlab/java/jar/toolbox/testmeas.jar
+0258b000-0258d000 r-xs 00005000 08:05 267        /media/Dane/Matlab/java/jar/verctrl.jar
+0258d000-0258f000 r-xs 00007000 08:05 271        /media/Dane/Matlab/java/jarext/access-bridge.jar
+0258f000-02592000 r-xs 0000d000 08:05 273        /media/Dane/Matlab/java/jarext/avalon.jar
+02592000-02595000 r-xs 0003d000 08:05 274        /media/Dane/Matlab/java/jarext/collections.jar
+02595000-02598000 r-xs 0001a000 08:05 277        /media/Dane/Matlab/java/jarext/commons-net-1.0.0.jar
+02598000-025a0000 r-xs 00072000 08:05 279        /media/Dane/Matlab/java/jarext/ice/ib5core.jar
+025a0000-025a4000 r-xs 00037000 08:05 282        /media/Dane/Matlab/java/jarext/ice/ib5https.jar
+025a4000-025a6000 r-xs 00013000 08:05 284        /media/Dane/Matlab/java/jarext/ice/ib5ref.jar
+025a6000-025a9000 r-xs 00011000 08:05 286        /media/Dane/Matlab/java/jarext/ice/ib5util.jar
+025a9000-025ac000 r-xs 00024000 08:05 289        /media/Dane/Matlab/java/jarext/J2PrinterWorks.jar
+025ac000-025af000 r-xs 00018000 08:05 292        /media/Dane/Matlab/java/jarext/mwucarunits.jar
+025af000-025bc000 r-xs 000d1000 08:05 296        /media/Dane/Matlab/java/jarext/xalan.jar
+025bc000-025cc000 r-xs 00197000 08:05 297        /media/Dane/Matlab/java/jarext/xercesImpl.jar
+025cc000-02650000 r-xp 00000000 08:07 544468     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libawt.so
+02650000-02657000 rwxp 00084000 08:07 544468     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libawt.so
+02657000-0267b000 rwxp 00000000 00:00 0 
+0267b000-026be000 r-xp 00000000 08:07 544470     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/xawt/libmawt.so
+026be000-026c0000 rwxp 00043000 08:07 544470     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/xawt/libmawt.so
+026c0000-026c1000 rwxp 00000000 00:00 0 
+026c1000-026c5000 r-xp 00000000 08:07 527149     /usr/lib/libXtst.so.6.1.0
+026c5000-026c6000 r-xp 00003000 08:07 527149     /usr/lib/libXtst.so.6.1.0
+026c6000-026c7000 rwxp 00004000 08:07 527149     /usr/lib/libXtst.so.6.1.0
+026c7000-026d3000 r-xp 00000000 08:07 527129     /usr/lib/libXi.so.6.1.0
+026d3000-026d4000 r-xp 0000b000 08:07 527129     /usr/lib/libXi.so.6.1.0
+026d4000-026d5000 rwxp 0000c000 08:07 527129     /usr/lib/libXi.so.6.1.0
+026d5000-026e3000 r-xs 00000000 08:06 137682     /home/gacek/.fontconfig/b9f812fdbabd6d83493fb8cafa38b270-le32d4.cache-3
+026e3000-026e4000 r-xs 00000000 08:07 405293     /var/cache/fontconfig/a18183678af55fd6535fa2d00e080189-le32d4.cache-3
+026e4000-026e9000 r-xs 0001b000 08:05 247        /media/Dane/Matlab/java/jar/toolbox/control.jar
+026e9000-02762000 r-xp 00000000 08:07 544473     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libfontmanager.so
+02762000-0276c000 rwxp 00078000 08:07 544473     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libfontmanager.so
+0276c000-02771000 rwxp 00000000 00:00 0 
+02771000-02779000 r-xs 00115000 08:07 668030     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/resources.jar
+02779000-0277c000 ---p 00000000 00:00 0 
+0277c000-027ca000 rwxp 00000000 00:00 0 
+027ca000-027dd000 r-xp 00000000 08:07 544455     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libnet.so
+027dd000-027de000 rwxp 00013000 08:07 544455     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libnet.so
+027de000-027e5000 r-xp 00000000 08:07 544456     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libnio.so
+027e5000-027e6000 rwxp 00006000 08:07 544456     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libnio.so
+027e6000-027e7000 r-xp 00000000 00:00 0 
+027e7000-027e8000 rwxp 00000000 00:00 0 
+027e8000-027eb000 r-xs 00000000 08:07 414552     /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-3
+027eb000-027fd000 r-xs 00000000 08:07 402199     /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-3
+027fd000-02802000 r-xp 00000000 08:05 304        /media/Dane/Matlab/bin/glnx86/libnativelex.so
+02802000-02804000 rwxp 00004000 08:05 304        /media/Dane/Matlab/bin/glnx86/libnativelex.so
+02804000-02832000 r-xp 00000000 08:07 544474     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libjpeg.so
+02832000-02833000 rwxp 0002e000 08:07 544474     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libjpeg.so
+02833000-02837000 r-xp 00000000 08:07 527159     /usr/lib/libXxf86vm.so.1.0.0
+02837000-02838000 r-xp 00003000 08:07 527159     /usr/lib/libXxf86vm.so.1.0.0
+02838000-02839000 rwxp 00004000 08:07 527159     /usr/lib/libXxf86vm.so.1.0.0
+02839000-0285b000 r-xs 00000000 08:07 404494     /var/cache/fontconfig/365b55f210c0a22e9a19e35191240f32-le32d4.cache-3
+0285b000-02866000 r-xs 00000000 08:07 405150     /var/cache/fontconfig/0f34bcd4b6ee430af32735b75db7f02b-le32d4.cache-3
+02866000-0286d000 r-xs 00000000 08:07 405151     /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le32d4.cache-3
+0286d000-0286e000 r-xs 00000000 08:07 405371     /var/cache/fontconfig/4c73fe0c47614734b17d736dbde7580a-le32d4.cache-3
+0286e000-02871000 r-xs 00000000 08:07 405380     /var/cache/fontconfig/6eb3985aa4124903f6ff08ba781cd364-le32d4.cache-3
+02871000-02877000 r-xs 00000000 08:07 405386     /var/cache/fontconfig/e383d7ea5fbe662a33d9b44caf393297-le32d4.cache-3
+02877000-0287a000 r-xs 00000000 08:07 404386     /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-3
+0287a000-0289a000 r-xp 00000000 08:05 305        /media/Dane/Matlab/bin/glnx86/glren.so
+0289a000-0289e000 rwxp 0001f000 08:05 305        /media/Dane/Matlab/bin/glnx86/glren.so
+0289e000-0289f000 rwxp 00000000 00:00 0 
+0289f000-028a7000 r-xp 00000000 08:07 655397     /lib/libdrm.so.2.4.0
+028a7000-028a8000 r-xp 00008000 08:07 655397     /lib/libdrm.so.2.4.0
+028a8000-028a9000 rwxp 00009000 08:07 655397     /lib/libdrm.so.2.4.0
+028a9000-028aa000 r-xp 00000000 08:07 33574      /usr/share/locale-langpack/pl/LC_MESSAGES/libc.mo
+028aa000-029f0000 r-xp 00000000 08:05 184        /media/Dane/Matlab/bin/glnx86/libmwnumerics.so
+029f0000-02a0a000 rwxp 00145000 08:05 184        /media/Dane/Matlab/bin/glnx86/libmwnumerics.so
+02a0a000-02a0d000 ---p 00000000 00:00 0 
+02a0d000-02a5b000 rwxp 00000000 00:00 0 
+02a5b000-02a5e000 ---p 00000000 00:00 0 
+02a5e000-02aac000 rwxp 00000000 00:00 0 
+02aac000-02aaf000 ---p 00000000 00:00 0 
+02aaf000-02afd000 rwxp 00000000 00:00 0 
+02afd000-02b04000 r-xs 00000000 08:07 544081     /usr/lib/gconv/gconv-modules.cache
+02b04000-02b0a000 r-xp 00000000 08:05 1474       /media/Dane/Matlab/toolbox/matlab/graph2d/private/lineseriesmex.mexglx
+02b0a000-02b0c000 rwxp 00005000 08:05 1474       /media/Dane/Matlab/toolbox/matlab/graph2d/private/lineseriesmex.mexglx
+02b0e000-02b13000 r-xs 00016000 08:05 298        /media/Dane/Matlab/java/jarext/xml-apis.jar
+02b13000-02b16000 ---p 00000000 00:00 0 
+02b16000-02b64000 rwxp 00000000 00:00 0 
+02b64000-02b67000 ---p 00000000 00:00 0 
+02b67000-02bb5000 rwxp 00000000 00:00 0 
+02bb5000-02bb8000 ---p 00000000 00:00 0 
+02bb8000-02c06000 rwxp 00000000 00:00 0 
+02c06000-02c09000 ---p 00000000 00:00 0 
+02c09000-02c57000 rwxp 00000000 00:00 0 
+02c57000-02c5b000 r-xp 00000000 08:05 963        /media/Dane/Matlab/bin/glnx86/libnativehg.so
+02c5b000-02c5d000 rwxp 00003000 08:05 963        /media/Dane/Matlab/bin/glnx86/libnativehg.so
+02c72000-02c83000 r-xs 000a2000 08:05 237        /media/Dane/Matlab/java/jar/mlwidgets.jar
+02c83000-02c86000 ---p 00000000 00:00 0 
+02c86000-02cd4000 rwxp 00000000 00:00 0 
+02cd4000-02cd7000 ---p 00000000 00:00 0 
+02cd7000-02d25000 rwxp 00000000 00:00 0 
+02d49000-02d4c000 r-xs 00011000 08:05 261        /media/Dane/Matlab/java/jar/toolbox/rptgencore.jar
+02d4c000-02d70000 r-xp 00000000 08:07 655590     /lib/libexpat.so.1.5.2
+02d70000-02d72000 r-xp 00024000 08:07 655590     /lib/libexpat.so.1.5.2
+02d72000-02d73000 rwxp 00026000 08:07 655590     /lib/libexpat.so.1.5.2
+02d75000-02d83000 r-xs 00000000 08:07 402239     /var/cache/fontconfig/865f88548240fee46819705c6468c165-le32d4.cache-3
+02d83000-02dc9000 r-xp 00000000 08:07 531569     /usr/lib/mesa/libGL.so.1.2
+02dc9000-02dca000 ---p 00046000 08:07 531569     /usr/lib/mesa/libGL.so.1.2
+02dca000-02dcf000 r-xp 00046000 08:07 531569     /usr/lib/mesa/libGL.so.1.2
+02dcf000-02dd4000 rwxp 0004b000 08:07 531569     /usr/lib/mesa/libGL.so.1.2
+02dd4000-02dd6000 rwxp 00000000 00:00 0 
+02dd6000-02e19000 r-xp 00000000 08:05 522        /media/Dane/Matlab/bin/glnx86/libmwbuiltins.so
+02e19000-02e23000 rwxp 00042000 08:05 522        /media/Dane/Matlab/bin/glnx86/libmwbuiltins.so
+02e23000-02e24000 rwxp 00000000 00:00 0 
+02e3b000-02e7b000 rwxp 00000000 00:00 0 
+02e8a000-02e91000 r-xs 00094000 08:07 655767     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/jsse.jar
+02e91000-02efe000 r-xp 00000000 08:07 527070     /usr/lib/libGLU.so.1.3.070900
+02efe000-02eff000 ---p 0006d000 08:07 527070     /usr/lib/libGLU.so.1.3.070900
+02eff000-02f00000 r-xp 0006d000 08:07 527070     /usr/lib/libGLU.so.1.3.070900
+02f00000-02f01000 rwxp 0006e000 08:07 527070     /usr/lib/libGLU.so.1.3.070900
+02f01000-02f04000 ---p 00000000 00:00 0 
+02f04000-02f52000 rwxp 00000000 00:00 0 
+02f8d000-02fcd000 rwxp 00000000 00:00 0 
+02fe6000-02fe8000 r-xs 00000000 08:07 405290     /var/cache/fontconfig/90e84e89a4382a8db77728561d41356d-le32d4.cache-3
+03001000-03002000 r-xs 00000000 08:07 405155     /var/cache/fontconfig/27f6fa40476fb33ad65cb210c133a216-le32d4.cache-3
+03066000-0306a000 r-xs 00036000 08:05 288        /media/Dane/Matlab/java/jarext/ice/icessl.jar
+0306a000-03149000 r-xp 00000000 08:07 527960     /usr/lib/libstdc++.so.6.0.14
+03149000-0314d000 r-xp 000de000 08:07 527960     /usr/lib/libstdc++.so.6.0.14
+0314d000-0314e000 rwxp 000e2000 08:07 527960     /usr/lib/libstdc++.so.6.0.14
+0314e000-03155000 rwxp 00000000 00:00 0 
+031bd000-031be000 r-xs 00000000 08:07 405197     /var/cache/fontconfig/b73ae53b2eee308c3d7feb99ac2d34cd-le32d4.cache-3
+031e8000-031f0000 r-xs 00054000 08:05 248        /media/Dane/Matlab/java/jar/toolbox/curvefit.jar
+0328f000-03295000 r-xs 00000000 08:07 405391     /var/cache/fontconfig/b83386915dae36184c7e3985fd26e4b1-le32d4.cache-3
+0336c000-033ad000 rwxp 00000000 00:00 0 
+03445000-034c4000 r-xp 00000000 08:05 188        /media/Dane/Matlab/bin/glnx86/libfftw3f.so.3
+034c4000-034c8000 rwxp 0007e000 08:05 188        /media/Dane/Matlab/bin/glnx86/libfftw3f.so.3
+0356f000-03574000 r-xs 00043000 08:05 283        /media/Dane/Matlab/java/jarext/ice/ib5js.jar
+03737000-0373a000 r-xs 0001a000 08:05 291        /media/Dane/Matlab/java/jarext/junit.jar
+03740000-03741000 r-xs 00000000 08:07 405382     /var/cache/fontconfig/e3fa16a14183b06aa45b3e009278fd14-le32d4.cache-3
+0391c000-0395c000 rwxp 00000000 00:00 0 
+03a05000-03a46000 rwxp 00000000 00:00 0 
+03a46000-03a47000 ---p 00000000 00:00 0 
+03a47000-04247000 rwxp 00000000 00:00 0 
+0428d000-042b0000 r-xp 00000000 08:07 544449     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libjava.so
+042b0000-042b2000 rwxp 00023000 08:07 544449     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libjava.so
+043c5000-043c7000 r-xs 00000000 08:07 405152     /var/cache/fontconfig/9123b38b1c36356a690c2f0bc4cbf728-le32d4.cache-3
+044d3000-044d5000 r-xs 0000a000 08:05 290        /media/Dane/Matlab/java/jarext/jaccess-1_4.jar
+04560000-04563000 r-xs 0000e000 08:05 280        /media/Dane/Matlab/java/jarext/ice/ib5extra.jar
+04735000-04736000 r-xs 00000000 08:07 405334     /var/cache/fontconfig/6a53c69dea097a2d716e069445527da8-le32d4.cache-3
+04757000-04758000 r-xs 00000000 08:07 405296     /var/cache/fontconfig/4abdb2dd99886b2b2d3168a6b22d0473-le32d4.cache-3
+0479b000-047a8000 r-xs 00080000 08:05 229        /media/Dane/Matlab/java/jar/widgets.jar
+047cd000-047d6000 rwxp 00000000 00:00 0 
+047d6000-0484d000 rwxp 00000000 00:00 0 
+0485e000-04861000 ---p 00000000 00:00 0 
+04861000-048af000 rwxp 00000000 00:00 0 
+048b7000-048c4000 rwxp 00000000 00:00 0 
+048c4000-0490d000 rwxp 00000000 00:00 0 
+04a8f000-04acf000 rwxp 00000000 00:00 0 
+04b51000-04cb3000 r-xp 00000000 08:05 171        /media/Dane/Matlab/bin/glnx86/libmwhg.so
+04cb3000-04d09000 rwxp 00161000 08:05 171        /media/Dane/Matlab/bin/glnx86/libmwhg.so
+04d09000-04d0b000 rwxp 00000000 00:00 0 
+04d0b000-051a9000 r-xp 00000000 08:07 544443     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/client/libjvm.so
+051a9000-051cc000 rwxp 0049e000 08:07 544443     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/client/libjvm.so
+051cc000-055e9000 rwxp 00000000 00:00 0 
+0572b000-0572c000 r-xs 00000000 08:07 405381     /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-3
+0579d000-0579e000 rwxp 00000000 00:00 0 
+057d9000-057dc000 r-xs 00018000 08:05 295        /media/Dane/Matlab/java/jarext/wsdl4j.jar
+05904000-05c33000 r-xp 00000000 08:05 193        /media/Dane/Matlab/bin/glnx86/lapack.so
+05c33000-05c35000 rwxp 0032e000 08:05 193        /media/Dane/Matlab/bin/glnx86/lapack.so
+05c35000-05d39000 rwxp 00000000 00:00 0 
+05f22000-0603b000 r-xp 00000000 08:07 527104     /usr/lib/libX11.so.6.3.0
+0603b000-0603c000 r-xp 00118000 08:07 527104     /usr/lib/libX11.so.6.3.0
+0603c000-0603e000 rwxp 00119000 08:07 527104     /usr/lib/libX11.so.6.3.0
+0603e000-0603f000 rwxp 00000000 00:00 0 
+06114000-06118000 r-xs 00021000 08:05 246        /media/Dane/Matlab/java/jar/toolbox/comm.jar
+0617f000-061bf000 rwxp 00000000 00:00 0 
+06283000-0628d000 r-xs 0008f000 08:05 293        /media/Dane/Matlab/java/jarext/saxon.jar
+062a6000-062a9000 r-xs 00000000 08:07 405149     /var/cache/fontconfig/d60319d88cac85ba9e1a07bd06cfbb8c-le32d4.cache-3
+06477000-06479000 r-xs 00000000 08:07 405384     /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le32d4.cache-3
+0653f000-06545000 r-xs 0003c000 08:05 265        /media/Dane/Matlab/java/jar/toolbox/stats.jar
+06599000-0659c000 r-xs 00010000 08:05 270        /media/Dane/Matlab/java/jarext/mwjava2specific.jar
+065d9000-065da000 ---p 00000000 00:00 0 
+065da000-0665a000 rwxp 00000000 00:00 0 
+06764000-06766000 r-xs 00011000 08:05 294        /media/Dane/Matlab/java/jarext/vb20.jar
+06774000-067a7000 rwxp 00000000 00:00 0 
+0686c000-06871000 r-xs 00030000 08:05 234        /media/Dane/Matlab/java/jar/jmi.jar
+06882000-06a0f000 r-xp 00000000 08:05 185        /media/Dane/Matlab/sys/os/glnx86/libXm.so.2
+06a0f000-06a23000 rwxp 0018c000 08:05 185        /media/Dane/Matlab/sys/os/glnx86/libXm.so.2
+06a23000-06a24000 rwxp 00000000 00:00 0 
+06beb000-06bee000 r-xp 00000000 08:05 300        /media/Dane/Matlab/bin/glnx86/libnativejava.so
+06bee000-06bef000 rwxp 00002000 08:05 300        /media/Dane/Matlab/bin/glnx86/libnativejava.so
+06c0c000-06c0f000 ---p 00000000 00:00 0 
+06c0f000-06c5d000 rwxp 00000000 00:00 0 
+06d55000-06d56000 r-xs 00000000 08:07 405302     /var/cache/fontconfig/79517df041c92e3f2b4a9700e7dbe3c7-le32d4.cache-3
+06e20000-06e21000 r-xs 00000000 08:07 405370     /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-3
+06e9f000-06ea1000 r-xs 00000000 08:07 405176     /var/cache/fontconfig/8039e78ad04dad2b193eec8c5f90bc4d-le32d4.cache-3
+06f83000-06f92000 r-xp 00000000 08:07 544451     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libzip.so
+06f92000-06f94000 rwxp 0000e000 08:07 544451     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/libzip.so
+070c4000-070c6000 r-xs 0000d000 08:05 276        /media/Dane/Matlab/java/jarext/commapi/comm.jar
+070f2000-070f5000 r-xs 00017000 08:05 257        /media/Dane/Matlab/java/jar/toolbox/matlab/iofun.jar
+0726c000-07274000 r-xs 00000000 08:07 404457     /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-3
+07285000-073b3000 r-xp 00000000 08:05 176        /media/Dane/Matlab/bin/glnx86/libmwuix.so
+073b3000-073cf000 rwxp 0012d000 08:05 176        /media/Dane/Matlab/bin/glnx86/libmwuix.so
+073cf000-073d4000 rwxp 00000000 00:00 0 
+07466000-07467000 ---p 00000000 00:00 0 
+07467000-074e7000 rwxp 00000000 00:00 0 
+074f4000-07534000 rwxp 00000000 00:00 0 
+0755b000-0756f000 r-xs 000f1000 08:05 233        /media/Dane/Matlab/java/jar/ide.jar
+075ed000-075f0000 ---p 00000000 00:00 0 
+075f0000-0763e000 rwxp 00000000 00:00 0 
+07676000-07679000 ---p 00000000 00:00 0 
+07679000-076c7000 rwxp 00000000 00:00 0 
+07751000-07756000 r-xs 00023000 08:05 263        /media/Dane/Matlab/java/jar/toolbox/slcontrol.jar
+077c7000-079c7000 r-xp 00000000 08:07 531560     /usr/lib/locale/locale-archive
+07a1e000-07a1f000 r-xs 00000000 08:07 405387     /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-3
+07a4c000-07a68000 r-xp 00000000 08:05 532        /media/Dane/Matlab/sys/os/glnx86/libiberty.so
+07a68000-07a6a000 rwxp 0001b000 08:05 532        /media/Dane/Matlab/sys/os/glnx86/libiberty.so
+07ace000-07ad0000 r-xs 00001000 08:07 663194     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/ext/dnsns.jar
+07b30000-07b32000 r-xs 0000f000 08:05 281        /media/Dane/Matlab/java/jarext/ice/ib5http.jar
+07c04000-07c11000 r-xs 000b8000 08:05 239        /media/Dane/Matlab/java/jar/mwt.jar
+07c73000-07c76000 ---p 00000000 00:00 0 
+07c76000-07cc4000 rwxp 00000000 00:00 0 
+07e58000-07e5e000 r-xs 00000000 08:07 402236     /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-3
+07ea2000-07ea3000 r-xs 00000000 08:07 405194     /var/cache/fontconfig/407fd690308a0b04640307de6deab6da-le32d4.cache-3
+07ed5000-07ed8000 ---p 00000000 00:00 0 
+07ed8000-07f26000 rwxp 00000000 00:00 0 
+07f7b000-07f7f000 r-xs 00000000 08:07 405304     /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-3
+08048000-0804b000 r-xp 00000000 08:05 146        /media/Dane/Matlab/bin/glnx86/MATLAB
+0804b000-0804d000 rwxp 00002000 08:05 146        /media/Dane/Matlab/bin/glnx86/MATLAB
+08085000-08088000 ---p 00000000 00:00 0 
+08088000-080d6000 rwxp 00000000 00:00 0 
+08195000-0819d000 r-xp 00000000 08:07 527971     /usr/lib/libtalloc.so.2.0.1
+0819d000-0819e000 r-xp 00007000 08:07 527971     /usr/lib/libtalloc.so.2.0.1
+0819e000-0819f000 rwxp 00008000 08:07 527971     /usr/lib/libtalloc.so.2.0.1
+081d5000-081df000 r-xs 00054000 08:05 231        /media/Dane/Matlab/java/jar/hg.jar
+0820c000-0820f000 ---p 00000000 00:00 0 
+0820f000-0825d000 rwxp 00000000 00:00 0 
+08331000-08349000 r-xp 00000000 08:07 528070     /usr/lib/libxcb.so.1.1.0
+08349000-0834a000 r-xp 00017000 08:07 528070     /usr/lib/libxcb.so.1.1.0
+0834a000-0834b000 rwxp 00018000 08:07 528070     /usr/lib/libxcb.so.1.1.0
+083b0000-083f8000 r-xp 00000000 08:05 175        /media/Dane/Matlab/bin/glnx86/libmwm_ir.so
+083f8000-08425000 rwxp 00047000 08:05 175        /media/Dane/Matlab/bin/glnx86/libmwm_ir.so
+086b3000-086b4000 r-xs 00000000 08:07 402213     /var/cache/fontconfig/0fafd173547752dce4dee1a69e0b3c95-le32d4.cache-3
+0872e000-08733000 r-xs 0001d000 08:05 249        /media/Dane/Matlab/java/jar/toolbox/dastudio.jar
+0875d000-08760000 ---p 00000000 00:00 0 
+08760000-087de000 rwxp 00000000 00:00 0 
+08856000-08857000 r-xs 00000000 08:07 405294     /var/cache/fontconfig/b9af901c4f3947128be824d599af5f25-le32d4.cache-3
+088de000-088e1000 ---p 00000000 00:00 0 
+088e1000-0892f000 rwxp 00000000 00:00 0 
+0893b000-0893d000 r-xp 00000000 08:07 527117     /usr/lib/libXdamage.so.1.1.0
+0893d000-0893e000 r-xp 00001000 08:07 527117     /usr/lib/libXdamage.so.1.1.0
+0893e000-0893f000 rwxp 00002000 08:07 527117     /usr/lib/libXdamage.so.1.1.0
+08961000-08964000 ---p 00000000 00:00 0 
+08964000-089b2000 rwxp 00000000 00:00 0 
+089be000-089c6000 rwxp 00000000 00:00 0 
+08b43000-08b44000 r-xs 00000000 08:07 402232     /var/cache/fontconfig/26de28bc8622bbc1fb67fd234c21975f-le32d4.cache-3
+08c28000-09ba7000 rwxp 00000000 00:00 0          [heap]
+7ee40000-7fa60000 rwxp 00000000 00:00 0 
+7fa60000-84390000 rwxp 00000000 00:00 0 
+84390000-85bb2000 rwxp 00000000 00:00 0 
+85bb2000-8ee40000 rwxp 00000000 00:00 0 
+8ee40000-8fa40000 rwxp 00000000 00:00 0 
+8fa40000-92e40000 rwxp 00000000 00:00 0 
+92e40000-93468000 r-xs 00001000 08:07 544535     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/client/classes.jsa
+93468000-93840000 rwxp 00000000 00:00 0 
+93840000-93f78000 rwxp 00629000 08:07 544535     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/client/classes.jsa
+93f78000-94440000 rwxp 00000000 00:00 0 
+94440000-94521000 rwxp 00d61000 08:07 544535     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/client/classes.jsa
+94521000-94840000 rwxp 00000000 00:00 0 
+94840000-94848000 r-xs 00e42000 08:07 544535     /usr/lib/jvm/java-6-sun-1.6.0.22/jre/lib/i386/client/classes.jsa
+94848000-94c40000 rwxp 00000000 00:00 0 
+b490b000-b4f4b000 rwxs 00000000 00:04 884753     /SYSV00000000 (deleted)
+b4f4b000-b51e3000 r-xp 00000000 08:07 529117     /usr/lib/dri/swrast_dri.so
+b51e3000-b51e4000 ---p 00298000 08:07 529117     /usr/lib/dri/swrast_dri.so
+b51e4000-b51ed000 r-xp 00298000 08:07 529117     /usr/lib/dri/swrast_dri.so
+b51ed000-b51f0000 rwxp 002a1000 08:07 529117     /usr/lib/dri/swrast_dri.so
+b51f0000-b5200000 rwxp 00000000 00:00 0 
+b5200000-b52fe000 rwxp 00000000 00:00 0 
+b52fe000-b5300000 ---p 00000000 00:00 0 
+b5300000-b536d000 rwxp 00000000 00:00 0 
+b536d000-b5400000 ---p 00000000 00:00 0 
+b5400000-b54fd000 rwxp 00000000 00:00 0 
+b54fd000-b5500000 ---p 00000000 00:00 0 
+b5500000-b55f6000 rwxp 00000000 00:00 0 
+b55f6000-b5600000 ---p 00000000 00:00 0 
+b5600000-b56fe000 rwxp 00000000 00:00 0 
+b56fe000-b5700000 ---p 00000000 00:00 0 
+b571e000-b594e000 rwxp 00000000 00:00 0 
+b594e000-b771e000 rwxp 00000000 00:00 0 
+bf930000-bf933000 ---p 00000000 00:00 0 
+bf934000-bf980000 rwxp 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xms16m -Djava.util.prefs.PreferencesFactory=com.mathworks.util.DisabledPreferencesFactory -Djava.library.path=/media/Dane/Matlab/bin/glnx86: vfprintf abort 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+CLASSPATH=/usr/lib/jvm/java-6-sun/jre/lib/ext/jmf.jar:.:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+USERNAME=gacek
+LD_LIBRARY_PATH=/media/Dane/Matlab/sys/os/glnx86:/media/Dane/Matlab/bin/glnx86:/media/Dane/Matlab/extern/lib/glnx86:/usr/lib/jvm/java-6-sun-1.6.0.22/jre//lib/i386/native_threads:/usr/lib/jvm/java-6-sun-1.6.0.22/jre//lib/i386/client:/usr/lib/jvm/java-6-sun-1.6.0.22/jre//lib/i386:/usr/lib/jvm/java-6-sun/jre/lib/ext::/usr/lib:/media/Dane/Matlab/sys/opengl/lib/glnx86
+SHELL=/bin/bash
+DISPLAY=:0.0
+ARCH=glnx86
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x430320], sa_mask[0]=0x7ffbfeff, sa_flags=0x00000004
+SIGBUS: [libjvm.so+0x430320], sa_mask[0]=0x7ffbfeff, sa_flags=0x00000004
+SIGFPE: [libmwbridge.so+0x25b38], sa_mask[0]=0x08080002, sa_flags=0x00000004
+SIGPIPE: [libjvm.so+0x3559a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x3559a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libmwbridge.so+0x25b38], sa_mask[0]=0x08080002, sa_flags=0x00000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x3585e0], sa_mask[0]=0x08080002, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x358310], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libmwbridge.so+0x262f0], sa_mask[0]=0x08080002, sa_flags=0x00000004
+SIGTERM: [libjvm.so+0x358310], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libmwbridge.so+0x25b38], sa_mask[0]=0x08080002, sa_flags=0x00000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:squeeze/sid
+
+uname:Linux 2.6.35-22-generic #35-Ubuntu SMP Sat Oct 16 20:36:48 UTC 2010 i686
+libc:glibc 2.12.1 NPTL 2.12.1 
+rlimit: STACK 8192k, CORE 0k, NPROC infinity, NOFILE 1024, AS infinity
+load average:0.85 0.56 0.43
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 3094968k(2028392k free), swap 1269128k(1269128k free)
+
+vm_info: Java HotSpot(TM) Client VM (17.1-b03) for linux-x86 JRE (1.6.0_22-b04), built on Sep 15 2010 01:20:09 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Fri Nov 12 11:56:46 2010
+elapsed time: 11 seconds
+

@@ -1,0 +1,17 @@
+function [theta, fi, y_est] = ident_lambda(u,y, lam)
+N = length(u);
+r = 2;
+fi = [y(2:N)', 0; u(1:N)'];
+theta = zeros(size(fi));
+y_est = zeros(size(y));
+for t = 3 : N 
+    R = zeros(r,r); 
+    rk = zeros(r,1);
+    %for i = max(t-200, 100):min(t+200, N-100)
+    for     
+        R = R + lam^abs(t-i) * fi(:,i) * fi(:,i)';
+        rk = rk + lam^abs(t-i) * y(i) * fi(:,i);
+    end
+    theta(:, i) = inv(R) * rk;
+    y_est(i) = fi(:,i)' * theta(:,i);
+end

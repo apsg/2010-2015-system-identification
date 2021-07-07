@@ -1,0 +1,30 @@
+ close all
+N = 5000;
+T = 1:N;
+
+[b1, b2] = parametry(N, 'A');
+
+th = [b1;b2];
+beta = 1;
+r = 2;
+
+wyniki = zeros(1, 5);
+
+id = 0;
+% u = randn(N, 1);
+u = idinput(N, 'prbs');
+y = zeros(N, 1);
+
+y_est = zeros(size(y));
+fi = zeros(2,N);
+sv = 0.15;
+for t=3:N
+    %y(t)= b1(t)*u(t)+b2(t)*u(t-1) + L(0,0,0.05);
+    y(t) = b2(t) * u(t-1) + b1(t) * u(t) + sv*randn(1);
+    fi(:,t) = [u(t);u(t-1)];
+end
+
+sw = si
+
+th1 = kalman_2r2s(fi, y, sw, sv);
+th2 = kalman_2s(fi, y, sw, sv);

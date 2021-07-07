@@ -1,0 +1,80 @@
+function [a1, a2] = parametry(N, id, show)
+if(nargin < 3)
+    show=true;
+end
+if(nargin<2)
+    id = ;
+end
+if(nargin<1)
+    N=5000;
+end
+
+if show
+    close all
+    xx = [-1, 0, 1, -1];
+    yy = [-1, 1, -1, -1]
+    p = plot(xx, yy, 'r');
+    set(p, 'LineWidth', 2);
+    hold on
+end
+if id == 1 % continuous - Doppler
+    
+    blocks = makesig('LinChirp', 200000);
+    blocks = blocks(1:N)';
+    a1 = blocks;
+    a1 = 0.7*a1-0.05;
+    
+    a2 = 0.2*pila(blocks) - 0.6;
+    
+elseif id == 2 % discontinuous - Blocks
+    
+    blocks = makesig('Blocks', N+500);
+    blocks = blocks(251:N+250)';
+    
+    a1 =  0.1 *  blocks-0.5;
+    
+    a2 =  0.2* blocks -0.5;
+    
+end
+if(show)
+    if id == 2
+        x = 'A';
+    else
+        x='B';
+    end
+    
+    plot(a1, a2);
+    f = figure('position', [50, 70, 800, 600], 'color', 'white');
+    set(gca, 'FontSize', 16);
+    if id==2
+        p = stairs(a1, 'k');
+    else
+        p = plot(a1, 'k');
+    end
+    set(p, 'LineWidth', 2);
+    set(gca, 'YLim', [-1,1]);
+    l = legend('\theta_1');
+    set(l, 'FontSize', 20);
+    t = text(0.05, 0.92, x, 'FontSize', 30, 'Units', 'Normalized');
+    
+    fr = getframe(gcf);
+    imwrite(fr.cdata, sprintf('parametry/%s1.png', x));
+    saveas(gcf, sprintf('parametry/%s1.eps', x), 'epsc');
+    
+    f = figure('position', [50, 70, 800, 600], 'color', 'white');
+    set(gca, 'FontSize', 16);
+    if id == 2
+        p=stairs(a2, 'k');
+    else
+        p = plot(a2, 'k');
+    end
+    set(p, 'LineWidth', 2);
+    set(gca, 'YLim', [-1,1]);
+    l = Legend('\theta_2');
+    set(l, 'FontSize', 20);
+    t = text(0.05, 0.92, x, 'FontSize', 30, 'Units', 'Normalized');
+    
+    fr = getframe(gcf);
+    imwrite(fr.cdata, sprintf('parametry/%s2.png', x));
+    saveas(gcf, sprintf('parametry/%s2.eps', x), 'epsc');
+end
